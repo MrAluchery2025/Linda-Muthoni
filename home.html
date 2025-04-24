@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lina Muthoni | Frontend Developer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #111;
+      line-height: 1.6;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+      z-index: 1000;
+    }
+    header h2 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #111;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #333;
+      border-radius: 3px;
+    }
+    nav {
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+    }
+    nav a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+    nav a:hover {
+      color: #0070f3;
+      transform: scale(1.05);
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+    .hero {
+      padding: 6rem 0 4rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+    .hero img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .hero-text {
+      max-width: 600px;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #000;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+      }
+      nav.active {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h2>Lina Muthoni</h2>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <nav id="navLinks">
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero container">
+    <img src="black-woman.jpg" alt="Lina Muthoni portrait">
+    <div class="hero-text">
+      <h1>Hi, I'm Lina Muthoni</h1>
+      <p>A frontend web developer crafting clean and responsive websites.</p>
+    </div>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
